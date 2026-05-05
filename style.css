@@ -1,3 +1,6 @@
+/* =============================================
+   GENETICS SIMULATOR — ULTRA PREMIUM STYLES
+   ============================================= */
 @font-face {
   font-family: 'Space Grotesk';
   src: url('./assests/fonts/SpaceGrotesk-Regular.ttf') format('truetype');
@@ -56,7 +59,7 @@
   --text-secondary: #8B8FA8;
   --text-muted: rgba(255,255,255,0.3);
 
-
+  /* Phenotype Colors */
   --pheno-green:   #00E676;
   --pheno-yellow:  #FFD600;
   --pheno-blue:    #40C4FF;
@@ -77,7 +80,7 @@
   --transition-slow: 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
+/* ---- RESET ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
@@ -88,6 +91,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   animation: bodyFadeIn 0.8s ease both;
+  user-select: none;
 }
 
 @keyframes bodyFadeIn {
@@ -95,6 +99,7 @@ body {
   to   { opacity: 1; filter: blur(0); }
 }
 
+/* ---- BACKGROUND ---- */
 .bg-grid {
   position: fixed; inset: 0; z-index: 0;
   background-image:
@@ -119,6 +124,7 @@ body {
   to   { transform: translate(30px, 20px) scale(1.08); }
 }
 
+/* ---- APP WRAPPER ---- */
 .app-wrapper {
   position: relative; z-index: 1;
   max-width: 1400px; margin: 0 auto;
@@ -126,7 +132,7 @@ body {
   display: flex; flex-direction: column; min-height: 100vh;
 }
 
-
+/* ---- HEADER ---- */
 .app-header {
   display: flex; align-items: center; justify-content: space-between;
   padding: 20px 28px;
@@ -156,6 +162,11 @@ body {
   background-clip: text; letter-spacing: -0.3px;
 }
 
+.header-sub {
+  font-size: 11px; color: var(--text-secondary);
+  font-family: var(--font-mono); margin-top: 2px; letter-spacing: 0.5px;
+}
+
 .header-badge {
   display: flex; align-items: center; gap: 8px;
   padding: 6px 14px; border-radius: 20px;
@@ -176,6 +187,7 @@ body {
   50% { opacity: 0.6; transform: scale(0.85); }
 }
 
+/* ---- MAIN LAYOUT ---- */
 .main-layout {
   display: grid;
   grid-template-columns: 320px 1fr;
@@ -189,7 +201,7 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-
+/* ---- PANELS ---- */
 .panel {
   background: rgba(255,255,255,0.025);
   border: 1px solid var(--border);
@@ -216,7 +228,7 @@ body {
   display: flex; flex-direction: column; gap: 20px;
 }
 
-
+/* ---- SECTION TITLES ---- */
 .section-title {
   font-size: 12px; font-weight: 600; letter-spacing: 1.2px;
   text-transform: uppercase; color: var(--text-secondary);
@@ -283,7 +295,7 @@ body {
   border: 1px solid var(--border);
 }
 
-
+/* ---- MODEL SELECTOR ---- */
 .model-selector {
   display: flex; flex-direction: column; gap: 6px;
 }
@@ -335,7 +347,7 @@ body {
   line-height: 1.6; font-style: italic;
 }
 
-
+/* ---- RUN BUTTON ---- */
 .run-btn {
   display: flex; align-items: center; justify-content: center; gap: 10px;
   width: 100%; padding: 14px 20px;
@@ -369,7 +381,7 @@ body {
 .run-btn-icon { position: relative; z-index: 1; display: flex; }
 .run-btn-icon svg { width: 16px; height: 16px; }
 
-
+/* ---- STATS BAR ---- */
 .stats-bar {
   display: grid; grid-template-columns: 1fr 1fr 1fr;
   gap: 8px;
@@ -393,7 +405,7 @@ body {
   font-weight: 600; color: var(--cyan);
 }
 
-
+/* ---- SUB-PANELS ---- */
 .sub-panel {
   background: rgba(255,255,255,0.02);
   border: 1px solid var(--border);
@@ -401,7 +413,7 @@ body {
   padding: 20px;
 }
 
-
+/* ---- GAMETES ---- */
 .gametes-grid {
   display: flex; align-items: center; gap: 16px;
 }
@@ -443,10 +455,10 @@ body {
   font-weight: 300; flex-shrink: 0;
 }
 
+/* ---- PUNNETT TABLE ---- */
+.punnett-container { overflow-x: hidden; width: 100%; }
 
-.punnett-container { overflow-x: auto; }
-
-.punnett-table-wrapper { min-width: 400px; }
+.punnett-table-wrapper { width: 100%; }
 
 .punnett-table {
   width: 100%; border-collapse: collapse;
@@ -456,15 +468,17 @@ body {
 .punnett-table th, .punnett-table td {
   border: 1px solid var(--border);
   text-align: center; vertical-align: middle;
-  font-size: 11px;
+  font-size: clamp(8px, 1.8vw, 11px);
+  word-break: break-all;
 }
 
 .punnett-table thead th {
-  padding: 8px 4px;
-  font-family: var(--font-mono); font-size: 11px;
+  padding: clamp(4px, 1vw, 8px) 2px;
+  font-family: var(--font-mono);
+  font-size: clamp(8px, 1.8vw, 11px);
   font-weight: 500; color: var(--purple);
   background: rgba(122,92,255,0.07);
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
 }
 
 .corner-cell {
@@ -473,22 +487,23 @@ body {
 }
 
 .row-header {
-  font-family: var(--font-mono); font-size: 11px;
+  font-family: var(--font-mono);
+  font-size: clamp(8px, 1.8vw, 11px);
   font-weight: 500; color: var(--cyan);
   background: rgba(0,212,255,0.07) !important;
-  padding: 4px 8px;
+  padding: 4px clamp(2px, 1vw, 8px);
   white-space: nowrap;
-  width: 60px;
+  width: clamp(36px, 9vw, 60px);
 }
 
 .punnett-cell {
-  padding: 6px 2px;
+  padding: clamp(3px, 0.8vw, 6px) 2px;
   cursor: pointer;
   transition: all var(--transition);
   position: relative;
   opacity: 0;
-  min-height: 54px;
-  height: 54px;
+  height: auto;
+  min-height: clamp(42px, 8vw, 54px);
 }
 
 .punnett-cell.revealed {
@@ -501,23 +516,27 @@ body {
 }
 
 .punnett-cell:hover {
-  transform: scale(1.12);
+  transform: scale(1.08);
   z-index: 10;
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
   border-color: var(--border-bright) !important;
 }
 
 .cell-genotype {
-  font-family: var(--font-mono); font-size: 10px;
+  font-family: var(--font-mono);
+  font-size: clamp(7px, 1.6vw, 10px);
   font-weight: 500; line-height: 1.3;
   color: rgba(255,255,255,0.85);
-  display: block; margin-bottom: 3px;
+  display: block; margin-bottom: 2px;
+  word-break: break-all;
 }
 
 .cell-phenotype {
-  font-size: 9px; font-weight: 600;
-  letter-spacing: 0.3px; text-transform: uppercase;
-  display: block; padding: 2px 4px;
+  font-size: clamp(6px, 1.3vw, 9px);
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  display: block; padding: 1px 2px;
   border-radius: 3px; color: #000;
   line-height: 1.2;
 }
@@ -530,7 +549,7 @@ body {
   margin-left: 6px; font-weight: 500;
 }
 
-
+/* ---- RESULTS ---- */
 .results-grid {
   display: grid; grid-template-columns: 1fr auto;
   gap: 12px; margin-bottom: 16px;
@@ -561,7 +580,7 @@ body {
   color: var(--text-secondary); margin-top: 4px;
 }
 
-
+/* Lethal Card */
 .lethal-card {
   min-width: 140px;
   display: none;
@@ -578,7 +597,7 @@ body {
 .lethal-item.alive .lethal-count { color: var(--green); }
 .lethal-item.dead .lethal-count { color: var(--red); }
 
-
+/* ---- PHENOTYPE BREAKDOWN ---- */
 .breakdown-title {
   font-size: 11px; font-weight: 600; letter-spacing: 1px;
   text-transform: uppercase; color: var(--text-muted);
@@ -629,7 +648,7 @@ body {
   text-align: right;
 }
 
-
+/* ---- LEGEND ---- */
 .legend-section { margin-top: 4px; }
 
 .legend-grid {
@@ -656,6 +675,7 @@ body {
   flex-shrink: 0;
 }
 
+/* ---- GENOTYPE COLORS on cells ---- */
 .pheno-green  { background: rgba(0,230,118,0.12); }
 .pheno-yellow { background: rgba(255,214,0,0.12); }
 .pheno-blue   { background: rgba(64,196,255,0.12); }
@@ -672,22 +692,22 @@ body {
 .badge-red    { background: var(--pheno-red);     color: #2a0000 !important; }
 .badge-black  { background: var(--pheno-black);   color: #ccc !important; }
 
-
+/* ---- FOOTER ---- */
 .app-footer {
   display: flex; justify-content: center;
   padding: 14px 4px;
-  font-size: 13px; color: var(--text-secondary);
+  font-size: 10px; color: var(--text-secondary);
   letter-spacing: 0.5px; font-family: var(--font-mono);
   border-top: 1px solid var(--border);
   margin-top: 20px;
 }
 
-
+/* ---- SCROLLBAR ---- */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
 
-
+/* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {
   .main-layout { grid-template-columns: 1fr; }
   .panel-left { position: static; max-height: none; }
@@ -697,11 +717,22 @@ body {
 @media (max-width: 600px) {
   .app-wrapper { padding: 12px 12px 0; }
   .app-header h1 { font-size: 16px; }
-  .punnett-table { font-size: 9px; }
   .results-grid { grid-template-columns: 1fr; }
+
+  .punnett-container { overflow-x: hidden; }
+  .punnett-table-wrapper { width: 100%; }
+  .punnett-table { font-size: 7px; table-layout: fixed; }
+  .punnett-table th,
+  .punnett-table td { padding: 2px 1px; }
+  .row-header { width: 28px; padding: 2px 2px; font-size: 7px; }
+  .punnett-table thead th { font-size: 7px; padding: 4px 1px; }
+  .cell-genotype { font-size: 7px; margin-bottom: 1px; }
+  .cell-phenotype { font-size: 6px; padding: 1px 1px; }
+  .punnett-cell { min-height: 36px; padding: 2px 1px; }
+  .punnett-cell:hover { transform: scale(1.04); }
 }
 
-
+/* ---- LOADING STATE ---- */
 .run-btn.loading .run-btn-text::after {
   content: '...';
   animation: dotDot 1s infinite;
@@ -713,6 +744,7 @@ body {
   66% { content: '...'; }
 }
 
+/* ---- TOOLTIP ---- */
 .cell-tooltip {
   position: fixed; z-index: 100;
   background: rgba(10,12,20,0.95);
