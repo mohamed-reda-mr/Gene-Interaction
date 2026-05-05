@@ -2,10 +2,9 @@
    GENETICS SIMULATOR — ULTRA PREMIUM STYLES
    ============================================= */
 
-   * { outline: 1px solid red; }
 @font-face {
   font-family: 'Space Grotesk';
-  src: url('./assests/fonts/SpaceGrotesk-Regular.ttf') format('truetype');
+  src: url('./assets/fonts/SpaceGrotesk-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
@@ -84,7 +83,10 @@
   --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 /* ---- RESET ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -461,7 +463,11 @@ body {
 }
 
 /* ---- PUNNETT TABLE ---- */
-.punnett-container { overflow-x: hidden; width: 100%; }
+.punnett-container {
+  width: 100%;
+  overflow-x: auto;
+ width: 100%; 
+}
 
 .punnett-table-wrapper { width: 100%; }
 
@@ -521,7 +527,7 @@ body {
 }
 
 .punnett-cell:hover {
-  transform: scale(1.08);
+  transform: none;
   z-index: 10;
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
   border-color: var(--border-bright) !important;
