@@ -476,10 +476,7 @@ function runSimulation() {
   const p1Pairs = parseGenotype(p1Input);
   const p2Pairs = parseGenotype(p2Input);
 
-  if (p1Pairs.length === 0 || p2Pairs.length === 0) {
-    alert('Please enter valid genotypes (e.g. AaBb).');
-    return;
-  }
+
 
  
   const p1Gametes = generateGametes(p1Pairs);
