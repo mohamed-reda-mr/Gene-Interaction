@@ -1,6 +1,8 @@
 /* =============================================
    GENETICS SIMULATOR — ULTRA PREMIUM STYLES
    ============================================= */
+
+   * { outline: 1px solid red; }
 @font-face {
   font-family: 'Space Grotesk';
   src: url('./assests/fonts/SpaceGrotesk-Regular.ttf') format('truetype');
@@ -39,9 +41,6 @@
 }
 * {
   -webkit-tap-highlight-color: transparent;
-}
-html,body{
-  max-width: 100vw;
 }
 :root {
   --bg: #050608;
@@ -94,8 +93,7 @@ body {
   font-family: var(--font-main);
   background: var(--bg);
   color: var(--text-primary);
-  min-height: 100vh;
-  max-width: 100vw;
+  min-height: 100%;
   overflow-x: hidden;
   animation: bodyFadeIn 0.8s ease both;
   user-select: none;
