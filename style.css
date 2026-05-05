@@ -772,3 +772,35 @@ body {
 .cell-tooltip.show { opacity: 1; }
 
 
+@media (max-width: 768px) {
+
+  /* ❌ اقفل كل الأنيميشن */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* ❌ شيل الخلفيات التقيلة */
+  .bg-orb {
+    display: none !important;
+  }
+
+  /* ❌ شيل البلور التقيل */
+  .bg-grid {
+    opacity: 0.2;
+  }
+
+  /* ❌ شيل glass effect */
+  .panel,
+  .app-header {
+    backdrop-filter: none !important;
+  }
+
+  /* ❌ امنع أي scale */
+  .punnett-cell:hover,
+  .run-btn:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+}
