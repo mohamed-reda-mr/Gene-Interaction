@@ -51,7 +51,7 @@
               <span class="label-icon p1-color">●</span> Parent 1
             </label>
             <div class="input-wrapper">
-              <input type="text" id="parent1" class="gene-input" value="AaBb" maxlength="8" placeholder="e.g. AaBb" />
+              <input type="text" id="parent1" class="gene-input"  maxlength="8" placeholder="e.g. AaBb" />
               <span class="input-hint" id="p1-hint"></span>
             </div>
           </div>
@@ -65,7 +65,7 @@
               <span class="label-icon p2-color">●</span> Parent 2
             </label>
             <div class="input-wrapper">
-              <input type="text" id="parent2" class="gene-input" value="AaBb" maxlength="8" placeholder="e.g. AaBb" />
+              <input type="text" id="parent2" class="gene-input" maxlength="8" placeholder="e.g. AaBb" />
               <span class="input-hint" id="p2-hint"></span>
             </div>
           </div>
@@ -75,31 +75,24 @@
           <h2 class="section-title"><span class="section-icon">⊞</span> Interaction Model</h2>
           <div class="model-selector">
             <button class="model-btn active" data-model="mendelian">
-              <span class="model-ratio">9:3:3:1</span>
               <span class="model-name">Mendelian</span>
             </button>
             <button class="model-btn" data-model="complementary">
-              <span class="model-ratio">9:7</span>
               <span class="model-name">Complementary</span>
             </button>
             <button class="model-btn" data-model="recessive_epistasis">
-              <span class="model-ratio">9:3:4</span>
               <span class="model-name">Recessive Epistasis</span>
             </button>
             <button class="model-btn" data-model="dominant_epistasis">
-              <span class="model-ratio">12:3:1</span>
               <span class="model-name">Dominant Epistasis</span>
             </button>
             <button class="model-btn" data-model="duplicate">
-              <span class="model-ratio">15:1</span>
               <span class="model-name">Duplicate Genes</span>
             </button>
             <button class="model-btn" data-model="suppression">
-              <span class="model-ratio">13:3</span>
               <span class="model-name">Suppression</span>
             </button>
             <button class="model-btn" data-model="lethal">
-              <span class="model-ratio">2:1</span>
               <span class="model-name">Lethal Alleles</span>
             </button>
           </div>
@@ -112,7 +105,7 @@
         </div>
 
         <button class="run-btn" id="run-btn">
-          <span class="run-btn-text">Run Simulation</span>
+          <span class="run-btn-text">Run</span>
           <span class="run-btn-icon">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M5 3l14 9-14 9V3z" fill="currentColor"/>
@@ -216,12 +209,11 @@
       </section>
 
     </main>
-    
- <footer class="app-footer">
+
+    <footer class="app-footer">
       <span>All 7 epistasis models ·</span>
     </footer>
 
-   
   </div>
 
   <script src="script.js"></script>
