@@ -56,7 +56,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   animation: bodyFadeIn 0.8s ease both;
-  user-select: none;
+ 
 }
 
 @keyframes bodyFadeIn {
